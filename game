@@ -108,13 +108,13 @@ while game:
         
         if sprite.collide_rect(paddle1, ball) and speed_x < 0:
             BLUE_SCORE += 1
-            blue_board = font_score.render("BLUE" + str(BLUE_SCORE), True, (0,0,0))
+            blue_board = font_score.render("BLUE: " + str(BLUE_SCORE), True, (0,0,0))
             speed_x *= -1
             speed_y *= 1
 
         if sprite.collide_rect(paddle2, ball) and speed_x > 0:
             RED_SCORE += 1
-            blue_board = font_score.render("BLUE" + str(BLUE_SCORE), True, (0,0,0))
+            red_board = font_score.render("RED: " + str(RED_SCORE), True, (0,0,0))
             speed_x *= -1
             speed_y *= 1
         #ball bounces when hit the up or bottom wall
