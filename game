@@ -101,7 +101,7 @@ while game:
         paddle1.update_left()
         paddle2.update_right()
         ball.rect.x += speed_x
-        ball.rect.y += speed_x
+        ball.rect.y += speed_y
         window.blit(blue_board, (10, 10))
         window.blit(red_board, (win_width - 80, 10))
 
@@ -118,7 +118,7 @@ while game:
             speed_x *= -1
             speed_y *= 1
         #ball bounces when hit the up or bottom wall
-        if ball.rect.y <= 10 or ball.rect.y >= win_height + 50:
+        if ball.rect.y <= 10 or ball.rect.y >= win_height - 100:
             speed_y *= -1
 
         #if ball flies behind this paddle, display loss condition for player left
