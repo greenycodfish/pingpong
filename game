@@ -76,14 +76,14 @@ clock = time.Clock()
 
 pygame.font.init()
 font = pygame.font.Font(None, 35)
-lose1 = font.render('BLUE PLAYER LOSE!', True, (180, 0, 0))
-lose2 = font.render('RED PLAYER LOSE!', True, (180, 0, 0))
+lose1 = font.render('RED PLAYER LOSE!', True, (180, 0, 0))
+lose2 = font.render('PINK PLAYER LOSE!', True, (180, 0, 0))
 
 BLUE_SCORE = 0
 RED_SCORE = 0
 font_score = pygame.font.Font(None,18)
-blue_board = font_score.render('BLUE: ' + str(BLUE_SCORE), True, (0, 0, 0))
-red_board = font_score.render('RED: ' + str(RED_SCORE), True, (0, 0, 0))
+blue_board = font_score.render('RED: ' + str(BLUE_SCORE), True, (0, 0, 0))
+red_board = font_score.render('PINK: ' + str(RED_SCORE), True, (0, 0, 0))
 
 initial_direction = random.choice([-1, 1])
 speed_x = 3
@@ -108,13 +108,13 @@ while game:
         
         if sprite.collide_rect(paddle1, ball) and speed_x < 0:
             BLUE_SCORE += 1
-            blue_board = font_score.render("BLUE: " + str(BLUE_SCORE), True, (0,0,0))
+            blue_board = font_score.render("RED: " + str(BLUE_SCORE), True, (0,0,0))
             speed_x *= -1
             speed_y *= 1
 
         if sprite.collide_rect(paddle2, ball) and speed_x > 0:
             RED_SCORE += 1
-            red_board = font_score.render("RED: " + str(RED_SCORE), True, (0,0,0))
+            red_board = font_score.render("PINK: " + str(RED_SCORE), True, (0,0,0))
             speed_x *= -1
             speed_y *= 1
         #ball bounces when hit the up or bottom wall
